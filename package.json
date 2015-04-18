@@ -5,7 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "browserify client/index.js -o client/bundle.js"
+    "postinstall": "browserify client/index.js -o client/bundle.js",
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": "0.10.x"
   },
   "repository": {
     "type": "git",

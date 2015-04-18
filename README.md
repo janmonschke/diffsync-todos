@@ -1,1 +1,1 @@
-# diffsync.js-todos
+# diffsync-todos

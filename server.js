@@ -11,7 +11,7 @@ hapiServer.connection({ port: process.env.PORT || 4000 });
 io = io(hapiServer.listener);
 
 dataAdapter = new DataAdapter();
-realtimeServer = new DiffSyncServer(io, dataAdapter);
+realtimeServer = new DiffSyncServer(dataAdapter, io);
 
 hapiServer.views({
   engines: {

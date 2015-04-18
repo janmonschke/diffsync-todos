@@ -19,7 +19,7 @@ client.onConnected = function(){
   document.body.appendChild(theListView.render().el);
 
   document.getElementById('addTodo').addEventListener('click', function(){
-    client.getData().todos.push({title: Math.random() + ''});
+    client.getData().todos.push({title: Math.random() + '', id: Math.random() + ''});
   });
 };
 

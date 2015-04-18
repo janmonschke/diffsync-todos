@@ -1,0 +1,27 @@
+{
+  "name": "diffsync-todos",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prestart": "browserify client/index.js -o client/bundle.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/janmonschke/diffsync-todos.git"
+  },
+  "author": "Jan Monschke",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/janmonschke/diffsync-todos/issues"
+  },
+  "homepage": "https://github.com/janmonschke/diffsync-todos",
+  "dependencies": {
+    "browserify": "^9.0.8",
+    "diffsync": "0.0.1",
+    "handlebars": "^3.0.1",
+    "hapi": "^8.4.0",
+    "socket.io": "^1.3.5"
+  }
+}

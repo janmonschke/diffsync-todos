@@ -12,7 +12,7 @@ var client = new DiffSyncClient(socketIOClient(), todoList);
 client.onConnected = function(){
   var TodoListView = ObserverCollectionView.extend({
     ViewClass: ItemView,
-    tagName: 'ul',
+    tagName: 'ol',
     attributes: {
       id: 'todos'
     }

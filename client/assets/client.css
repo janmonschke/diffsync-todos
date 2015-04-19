@@ -2,13 +2,9 @@ body {
   margin: 1em;
 }
 
-#todoText {
+#todoText, #todoName {
   margin-right: 1em;
   width: 20em;
-}
-
-#todos {
-  list-style-type: none;
 }
 
 .item button {

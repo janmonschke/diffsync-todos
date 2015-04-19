@@ -14,23 +14,51 @@
 
     <h1>diffsync todos</h1>
 
-    <p>Create a collaborative todo list:</p>
+    <div class="row">
+      <p>Create a collaborative todo list:</p>
 
-    <a href="/todos/test">Go to test todos</a>
+      <form id="todoCreateForm">
+        <input class="u-pull-left" type="text" placeholder="Todo name" id="todoName">
+        <button class="button-primary" id="todoCreate">create</button>
+      </form>
 
-    <h2>Stats</h2>
-    <table>
-      <tr>
-        <td>Connections</td>
-        <td>{{activeConnections}}</td>
-      </tr>
-      <tr>
-        <td>Lists</td>
-        <td>{{todoLists}}</td>
-      </tr>
-    </table>
+      <a href="/todos/test">Go to test todos</a>
+    </div>
+
+
+    <div class="row">
+      <h2>Stats</h2>
+      <table>
+        <tr>
+          <td>Connections</td>
+          <td>{{activeConnections}}</td>
+        </tr>
+        <tr>
+          <td>Lists</td>
+          <td>{{todoLists}}</td>
+        </tr>
+      </table>
+    </div>
 
   </div>
+
+  <script>
+    var form = document.getElementById('todoCreateForm');
+    var button = document.getElementById('todoCreate');
+    var nameField = document.getElementById('todoName');
+
+    var createTodo = function(event){
+      event.preventDefault();
+      var name = nameField.value;
+
+      if(name){
+        document.location.href = '/todos/' + name.trim();
+      }
+    };
+
+    form.addEventListener('submit', createTodo);
+    button.addEventListener('click', createTodo);
+  </script>
 
 </body>
 </html>

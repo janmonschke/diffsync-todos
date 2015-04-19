@@ -1,5 +1,4 @@
-var _             = require('underscore'),
-    ObserverView  = require('./observer-view'),
+var ObserverView  = require('./observer-view'),
     ItemView;
 
 ItemView = ObserverView.extend({
@@ -9,7 +8,7 @@ ItemView = ObserverView.extend({
     'click button': 'removeTodo'
   },
   template: function(model) {
-    return '<span class="itemText">' + model.text + '</span> <button class="button-primary">done</button>';
+    return '<span class="itemText">' + model.text + '</span><button>done</button>';
   },
   removeTodo: function(){
     var index = this.collection.indexOf(this.model);

@@ -1,9 +1,36 @@
-<h1>Test</h1>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>diffsync todos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="/client/assets/normalize.css">
+  <link rel="stylesheet" type="text/css" href="/client/assets/skeleton.css">
+  <link rel="stylesheet" type="text/css" href="/client/assets/client.css">
+</head>
+<body>
 
-<a href="/todos/test">Go to test todos</a>
+  <div class="container">
 
-<h2>Stats</h2>
-<ul>
-  <li>Connections: {{activeConnections}}</li>
-  <li>Todo lists: {{todoLists}}</li>
-</ul>
+    <h1>diffsync todos</h1>
+
+    <p>Create a collaborative todo list:</p>
+
+    <a href="/todos/test">Go to test todos</a>
+
+    <h2>Stats</h2>
+    <table>
+      <tr>
+        <td>Connections</td>
+        <td>{{activeConnections}}</td>
+      </tr>
+      <tr>
+        <td>Lists</td>
+        <td>{{todoLists}}</td>
+      </tr>
+    </table>
+
+  </div>
+
+</body>
+</html>

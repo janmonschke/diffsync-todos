@@ -1,0 +1,26 @@
+body {
+  margin: 1em;
+}
+
+#todoText {
+  margin-right: 1em;
+  width: 20em;
+}
+
+#todos {
+  list-style-type: none;
+}
+
+.item button {
+  transform: scale(.8);
+  opacity: 0;
+  transition: opacity .1s ease-in;
+}
+
+.item:hover button {
+  opacity: 1;
+}
+
+.itemText {
+  margin-right: 2em;
+}

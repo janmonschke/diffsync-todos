@@ -1,5 +1,31 @@
-<h1>Welcome to todos {{name}}</h1>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Todolist: {{name}} - diffsync</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="/client/assets/normalize.css">
+  <link rel="stylesheet" type="text/css" href="/client/assets/skeleton.css">
+  <link rel="stylesheet" type="text/css" href="/client/assets/client.css">
+</head>
+<body>
 
-<button id="addTodo">Add random todo</button>
+  <div class="container">
 
-<script src="/client/bundle.js"></script>
+    <h2>Welcome to todos {{name}}</h2>
+
+    <div class="row">
+      <form id="todoForm">
+        <input class="u-pull-left" type="text" placeholder="Todo text..." id="todoText">
+        <button id="todoButton" class="button-primary">Add</button>
+      </form>
+    </div>
+
+    <div class="row" id="todosContainer">
+    </div>
+
+  </div>
+
+  <script src="/client/bundle.js"></script>
+</body>
+</html>

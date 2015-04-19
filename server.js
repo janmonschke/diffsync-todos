@@ -18,7 +18,8 @@ hapiServer.views({
     hbs: require('handlebars')
   },
   path: './templates',
-  relativeTo: __dirname
+  relativeTo: __dirname,
+  isCached: isProduction
 });
 
 hapiServer.route({

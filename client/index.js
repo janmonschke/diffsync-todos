@@ -12,15 +12,36 @@ var client = new DiffSyncClient(socketIOClient(), todoList);
 client.onConnected = function(){
   var TodoListView = ObserverCollectionView.extend({
     ViewClass: ItemView,
-    tagName: 'ul'
+    tagName: 'ul',
+    attributes: {
+      id: 'todos'
+    }
   });
 
   var theListView = new TodoListView(client.getData().todos);
-  document.body.appendChild(theListView.render().el);
+  document.getElementById('todosContainer').appendChild(theListView.render().el);
 
-  document.getElementById('addTodo').addEventListener('click', function(){
-    client.getData().todos.push({title: Math.random() + '', id: Math.random() + ''});
-  });
+  var addTodoAction = function(event){
+    event.preventDefault();
+
+    var text = todoText.value;
+
+    if(text){
+      client.getData().todos.push({
+        text: todoText.value,
+        id: Math.random() + ''
+      });
+
+      todoText.value = '';
+      todoText.focus();
+    }
+  }
+
+  var todoText = document.getElementById('todoText');
+  var todoForm = document.getElementById('todoForm');
+  var todoButton = document.getElementById('todoButton');
+  todoButton.addEventListener('click', addTodoAction);
+  todoForm.addEventListener('click', addTodoAction);
 };
 
 client.onSynced = function(){

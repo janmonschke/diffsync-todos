@@ -9,7 +9,7 @@ var todoList = location.href.split('/').pop();
 
 var client = new DiffSyncClient(socketIOClient(), todoList);
 
-client.onConnected = function(){
+client.on('connected', function(){
   var TodoListView = ObserverCollectionView.extend({
     ViewClass: ItemView,
     tagName: 'ol',
@@ -21,7 +21,12 @@ client.onConnected = function(){
   var theListView = new TodoListView(client.getData().todos);
   document.getElementById('todosContainer').appendChild(theListView.render().el);
 
+  var todoText = document.getElementById('todoText');
+  var todoForm = document.getElementById('todoForm');
+  var todoButton = document.getElementById('todoButton');
+
   var addTodoAction = function(event){
+    event.stopPropagation();
     event.preventDefault();
 
     var text = todoText.value;
@@ -35,22 +40,19 @@ client.onConnected = function(){
       todoText.value = '';
       todoText.focus();
     }
-  }
+  };
 
-  var todoText = document.getElementById('todoText');
-  var todoForm = document.getElementById('todoForm');
-  var todoButton = document.getElementById('todoButton');
   todoButton.addEventListener('click', addTodoAction);
   todoForm.addEventListener('click', addTodoAction);
-};
+});
 
-client.onSynced = function(){
+client.on('snyced', function(){
   Backbone.trigger('state:sync');
-};
+});
 
-client.onError = function(error){
+client.on('failure', function(error){
   console.error(error);
-};
+});
 
 Backbone.on('state:change', function(){
   client.schedule();

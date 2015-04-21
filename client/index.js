@@ -26,7 +26,6 @@ client.on('connected', function(){
   var todoButton = document.getElementById('todoButton');
 
   var addTodoAction = function(event){
-    event.stopPropagation();
     event.preventDefault();
 
     var text = todoText.value;

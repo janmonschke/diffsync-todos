@@ -45,7 +45,7 @@ client.on('connected', function(){
   todoForm.addEventListener('click', addTodoAction);
 });
 
-client.on('snyced', function(){
+client.on('synced', function(){
   Backbone.trigger('state:sync');
 });
 

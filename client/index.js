@@ -49,7 +49,7 @@ client.on('synced', function(){
   Backbone.trigger('state:sync');
 });
 
-client.on('failure', function(error){
+client.on('error', function(error){
   console.error(error);
 });
 

@@ -1,4 +1,5 @@
 var ObserverView  = require('./observer-view'),
+    escape        = require('lodash.escape'),
     ItemView;
 
 ItemView = ObserverView.extend({
@@ -8,7 +9,7 @@ ItemView = ObserverView.extend({
     'click button': 'removeTodo'
   },
   template: function(model) {
-    return '<span class="itemText">' + model.text + '</span><button>done</button>';
+    return '<span class="itemText">' + escape(model.text) + '</span><button>done</button>';
   },
   removeTodo: function(){
     var index = this.collection.indexOf(this.model);

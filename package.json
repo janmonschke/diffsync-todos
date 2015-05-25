@@ -1,6 +1,6 @@
 {
   "name": "diffsync-todos",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -24,7 +24,9 @@
   "dependencies": {
     "backbone": "^1.1.2",
     "browserify": "^9.0.8",
+    "cradle": "^0.6.9",
     "diffsync": "2.1.1",
+    "diffsync-couchdb": "^1.0.0",
     "handlebars": "^3.0.1",
     "hapi": "^8.4.0",
     "html-to-vdom": "^0.5.5",
